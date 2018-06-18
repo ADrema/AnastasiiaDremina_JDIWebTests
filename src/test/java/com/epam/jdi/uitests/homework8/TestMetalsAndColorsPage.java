@@ -1,8 +1,9 @@
 package com.epam.jdi.uitests.homework8;
 
+import com.epam.jdi.uitests.base.TestBase;
 import com.epam.jdi.uitests.entities.MetalsAndColorsParameters;
-import com.epam.jdi.uitests.web.testng.testRunner.TestNGBase;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static com.epam.jdi.uitests.entities.User.PETER;
@@ -10,9 +11,9 @@ import static com.epam.jdi.uitests.enumObjects.Pages.METALSANDCOLORS;
 import static com.epam.jdi.uitests.pageObjects.site.JdiSite.homePage;
 import static com.epam.jdi.uitests.pageObjects.site.JdiSite.mAcPage;
 
-public class TestMetalsAndColorsPage extends TestNGBase {
+public class TestMetalsAndColorsPage extends TestBase {
 
-    @BeforeMethod
+    @BeforeClass
     public void beforeMEthod() {
 //        1. Login on JDI site as User
         homePage.open();
@@ -20,10 +21,10 @@ public class TestMetalsAndColorsPage extends TestNGBase {
         homePage.login(PETER);
     }
 
-//    @AfterMethod
-//    public void afterMethod() {
-//        mAcPage.refresh();
-//    }
+    @AfterMethod
+    public void afterMethod() {
+        mAcPage.refresh();
+    }
 
     @Test(dataProviderClass = DataProvider.class, dataProvider = "readFromJson")
     public void loginTest(MetalsAndColorsParameters parameters) {
