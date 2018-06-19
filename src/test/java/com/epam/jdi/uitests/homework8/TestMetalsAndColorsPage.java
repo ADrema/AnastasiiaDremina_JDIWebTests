@@ -14,8 +14,6 @@ import static com.epam.jdi.uitests.pageObjects.site.JdiSite.mAcPage;
 
 public class TestMetalsAndColorsPage extends TestBase {
 
-//    private MyConfig config;
-
     @BeforeClass(alwaysRun = true)
     public void beforeMEthod() {
         logger.info("Test-case has been started");
