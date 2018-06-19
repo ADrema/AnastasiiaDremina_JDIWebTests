@@ -2,3 +2,4 @@
 .logs
 target
 JDITestAutomationCourse.iml
+*.md
