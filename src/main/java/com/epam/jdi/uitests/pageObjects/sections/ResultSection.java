@@ -2,12 +2,14 @@ package com.epam.jdi.uitests.pageObjects.sections;
 
 import com.epam.jdi.uitests.entities.MetalsAndColorsParameters;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Section;
-import com.epam.web.matcher.testng.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsCollectionContaining.hasItem;
 
 public class ResultSection extends Section {
     @FindBy(css = ".info-panel-body-result li")
@@ -47,12 +49,12 @@ public class ResultSection extends Section {
         if (parameters.oddsValue() > 0) {
             odd = parameters.oddsValue();
         }
-        Assert.assertTrue(resultContent.contains("Summary: " + (even + odd)));
+        assertThat(resultContent, hasItem("Summary: " + (even + odd)));
     }
 
     private void checkElementsResult(MetalsAndColorsParameters parameters, List<String> resultContent) {
         if (parameters.metals.length() > 0) {
-            Assert.assertTrue(resultContent.contains("Elements: " + String.join(", ", parameters.elements)));
+            assertThat(resultContent, hasItem("Elements: " + String.join(", ", parameters.elements)));
         }
     }
 
@@ -61,7 +63,7 @@ public class ResultSection extends Section {
         if (parameters.color.length() > 0) {
             color = parameters.color;
         }
-        Assert.assertTrue(resultContent.contains("Color: " + color));
+        assertThat(resultContent, hasItem("Color: " + color));
     }
 
     private void checkMetalsResult(MetalsAndColorsParameters parameters, List<String> resultContent) {
@@ -69,7 +71,7 @@ public class ResultSection extends Section {
         if (parameters.metals.length() > 0) {
             metal = parameters.metals;
         }
-        Assert.assertTrue(resultContent.contains("Metal: " + metal));
+        assertThat(resultContent, hasItem("Metal: " + metal));
     }
 
     private void checkVegetablesResult(MetalsAndColorsParameters parameters, List<String> resultContent) {
@@ -77,6 +79,6 @@ public class ResultSection extends Section {
         if (parameters.vegetables.length > 0) {
             vegetables = String.join(", ", parameters.vegetables);
         }
-        Assert.assertTrue(resultContent.contains("Vegetables: " + vegetables));
+        assertThat(resultContent, hasItem("Vegetables: " + vegetables));
     }
 }
