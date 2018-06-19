@@ -4,6 +4,7 @@ import com.epam.jdi.uitests.base.TestBase;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static com.epam.jdi.uitests.core.settings.JDISettings.logger;
 import static com.epam.jdi.uitests.entities.MetalsAndColorsParameters.TEST1;
 import static com.epam.jdi.uitests.entities.User.PETER;
 import static com.epam.jdi.uitests.enumObjects.Pages.METALSANDCOLORS;
@@ -12,10 +13,11 @@ import static com.epam.jdi.uitests.pageObjects.site.JdiSite.mAcPage;
 
 public class TestMetalsAndColoraPage extends TestBase {
 
-    @BeforeClass()
+    @BeforeClass(alwaysRun = true)
     public static void beforeClass() {
         homePage.open();
         homePage.checkOpened();
+        logger.info("Test-case has been started");
     }
 
     @Test
