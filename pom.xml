@@ -13,7 +13,7 @@
         <aspectj.version>1.8.5</aspectj.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <suiteXmlFile>hw8Config.xml</suiteXmlFile>
+        <suiteXmlFile>hw7Config.xml</suiteXmlFile>
         <driver>chrome</driver>
 
     </properties>

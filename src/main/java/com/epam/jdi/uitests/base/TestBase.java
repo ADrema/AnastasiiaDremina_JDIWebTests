@@ -7,7 +7,6 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 public abstract class TestBase extends TestNGBase {
-//    MyConfig config;
     private long initTime;
 
     @BeforeSuite
