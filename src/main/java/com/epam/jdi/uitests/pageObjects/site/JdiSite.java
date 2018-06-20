@@ -12,6 +12,6 @@ public class JdiSite extends WebSite {
     public static HomePage homePage;
 
     @JPage(value = "/metals-colors.html", title = "Metal and Colors", titleCheckType = CONTAINS)
-    public static MetalsAndColorsPage mAcPage;
+    public static MetalsAndColorsPage metalsAndColorsPage;
 
 }

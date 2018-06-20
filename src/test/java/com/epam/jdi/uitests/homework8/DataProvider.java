@@ -11,6 +11,7 @@ import java.util.Set;
 
 public class DataProvider {
 
+    // TODO static import required
     @org.testng.annotations.DataProvider(name = "readFromJson")
     public static Object[][] getData() throws FileNotFoundException {
         JsonElement jsonData = new JsonParser().parse(new FileReader("src/test/resources/sourceData/JDI_ex8_metalsColorsDataSet.json"));
@@ -22,6 +23,7 @@ public class DataProvider {
             arr.add(dataSet.get(k));
         }
 
+        // TODO you can just use a different type token in according to data structure...
         List<MetalsAndColorsParameters> testData = new Gson().fromJson(arr, new TypeToken<List<MetalsAndColorsParameters>>() {
         }.getType());
 

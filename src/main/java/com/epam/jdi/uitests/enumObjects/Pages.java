@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
+// TODO code convention mismatch
 public enum Pages {
     HOME("Home"),
     SERVICE("Service"),
