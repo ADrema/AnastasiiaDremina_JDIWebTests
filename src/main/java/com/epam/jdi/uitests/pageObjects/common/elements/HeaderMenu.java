@@ -1,4 +1,4 @@
-package com.epam.jdi.uitests.pageObjects.elements;
+package com.epam.jdi.uitests.pageObjects.common.elements;
 
 import com.epam.jdi.uitests.web.selenium.elements.complex.Menu;
 

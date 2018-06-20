@@ -1,4 +1,4 @@
-package com.epam.jdi.uitests.pageObjects.forms;
+package com.epam.jdi.uitests.pageObjects.metalsAndColorsPage.forms;
 
 import com.epam.jdi.uitests.core.interfaces.common.IButton;
 import com.epam.jdi.uitests.core.interfaces.complex.ICheckList;
@@ -6,11 +6,8 @@ import com.epam.jdi.uitests.core.interfaces.complex.IComboBox;
 import com.epam.jdi.uitests.core.interfaces.complex.IDropDown;
 import com.epam.jdi.uitests.elements.VegetablesDropList;
 import com.epam.jdi.uitests.entities.MetalsAndColorsParameters;
-import com.epam.jdi.uitests.enumObjects.Even;
-import com.epam.jdi.uitests.enumObjects.Metals;
-import com.epam.jdi.uitests.enumObjects.Nature;
-import com.epam.jdi.uitests.enumObjects.Odds;
-import com.epam.jdi.uitests.pageObjects.sections.Summary;
+import com.epam.jdi.uitests.enumObjects.*;
+import com.epam.jdi.uitests.pageObjects.metalsAndColorsPage.sections.Summary;
 import com.epam.jdi.uitests.web.selenium.elements.common.Text;
 import com.epam.jdi.uitests.web.selenium.elements.complex.CheckList;
 import com.epam.jdi.uitests.web.selenium.elements.complex.ComboBox;
@@ -20,6 +17,9 @@ import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.object
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MetalsAndColorsForm extends Form {
 
@@ -69,15 +69,16 @@ public class MetalsAndColorsForm extends Form {
         if (parameters.color.length() > 0) {
             colorsDropDownList.select(parameters.color);
         }
-        if (parameters.vegetables.length > 0) {
+        if (parameters.vegetables.size() > 0) {
+// workaround for site feature. Vegetables option is selected by default
+            vegetablesList.select(Vegetables.VEGETABLES.value);
             vegetablesList.select(parameters.vegetables);
-            vegetablesList.unselect(parameters.unselectVegetables);
         }
         if (parameters.metals.length() > 0) {
             metalsComboBox.select(parameters.metals);
         }
-        if (parameters.elements.length > 0) {
-            nature.select(parameters.elements);
+        if (parameters.elements.size() > 0) {
+            nature.select(parameters.elements.toArray(new String[parameters.elements.size()]));
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.epam.jdi.uitests.pageObjects.sections;
+package com.epam.jdi.uitests.pageObjects.metalsAndColorsPage.sections;
 
 import com.epam.jdi.uitests.entities.MetalsAndColorsParameters;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Section;
@@ -76,7 +76,7 @@ public class ResultSection extends Section {
 
     private void checkVegetablesResult(MetalsAndColorsParameters parameters, List<String> resultContent) {
         String vegetables = "Vegetables";
-        if (parameters.vegetables.length > 0) {
+        if (parameters.vegetables.size() > 0) {
             vegetables = String.join(", ", parameters.vegetables);
         }
         assertThat(resultContent, hasItem("Vegetables: " + vegetables));

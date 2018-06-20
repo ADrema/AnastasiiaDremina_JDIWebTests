@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import static com.epam.jdi.uitests.core.settings.JDISettings.logger;
 import static com.epam.jdi.uitests.entities.MetalsAndColorsParameters.TEST1;
 import static com.epam.jdi.uitests.entities.User.PETER;
-import static com.epam.jdi.uitests.enumObjects.Pages.METALSANDCOLORS;
+import static com.epam.jdi.uitests.enumObjects.Pages.METALS_AND_COLORS;
 import static com.epam.jdi.uitests.pageObjects.site.JdiSite.homePage;
 import static com.epam.jdi.uitests.pageObjects.site.JdiSite.metalsAndColorsPage;
 
@@ -25,7 +25,7 @@ public class TestMetalsAndColoraPage extends TestBase {
 //        1. Login on JDI site as User
         homePage.login(PETER);
 //        2. Open Metals & Colors page by Header menu
-        homePage.headerMenu.selects(METALSANDCOLORS);
+        homePage.headerMenu.selects(METALS_AND_COLORS);
         metalsAndColorsPage.checkOpened();
 //        3. Fill form Metals & Colors by data below:
         metalsAndColorsPage.fillForm(TEST1);

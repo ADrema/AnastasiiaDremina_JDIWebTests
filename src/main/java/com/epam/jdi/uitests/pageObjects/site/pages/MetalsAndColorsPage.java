@@ -2,8 +2,8 @@ package com.epam.jdi.uitests.pageObjects.site.pages;
 
 import com.epam.jdi.uitests.core.interfaces.common.IText;
 import com.epam.jdi.uitests.entities.MetalsAndColorsParameters;
-import com.epam.jdi.uitests.pageObjects.forms.MetalsAndColorsForm;
-import com.epam.jdi.uitests.pageObjects.sections.ResultSection;
+import com.epam.jdi.uitests.pageObjects.metalsAndColorsPage.forms.MetalsAndColorsForm;
+import com.epam.jdi.uitests.pageObjects.metalsAndColorsPage.sections.ResultSection;
 import com.epam.jdi.uitests.web.selenium.elements.common.Button;
 import com.epam.jdi.uitests.web.selenium.elements.common.Text;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;

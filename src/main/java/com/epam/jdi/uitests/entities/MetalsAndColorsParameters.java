@@ -7,45 +7,47 @@ import com.epam.jdi.uitests.enumObjects.Vegetables;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 public class MetalsAndColorsParameters {
 
     public static MetalsAndColorsParameters TEST1 = new MetalsAndColorsParameters(
-            new Integer[]{3, 8},
-            new String[]{
-                    Nature.WATER.value,
-                    Nature.WIND.value
-            },
+            new ArrayList<Integer>() {{
+                add(3);
+                add(8);
+            }},
+            new ArrayList<String>() {{
+                add(Nature.WATER.value);
+                add(Nature.WIND.value);
+            }},
             Colors.RED.value,
             Metals.SELEN.value,
-            new String[]{
-                    Vegetables.CUCUMBER.value,
-                    Vegetables.TOMATO.value
-            },
-            new String[]{Vegetables.VEGETABLES.value}
+            new ArrayList<String>() {{
+                add(Vegetables.CUCUMBER.value);
+                add(Vegetables.TOMATO.value);
+            }}
     );
 
-    // TODO it will be better with List<...>
-    public Integer[] summary;
-    public String[] elements;
+// TODO it will be better with List<...>
+//    Done. Lists were created
+    public List<Integer> summary;
+    public List<String> elements;
     public String color;
     public String metals;
-    public String[] vegetables;
+    public List<String> vegetables;
 
-    // TODO this should not be here, couse you're described an entity regardless the element behaviour
-    public String[] unselectVegetables = new String[]{Vegetables.VEGETABLES.value};
-
+// TODO this should not be here, couse you're described an entity regardless the element behaviour
+//  Done. Property "unselectVegetables"  was removed
 
     public int evenValue() {
-        if (summary.length != 2) {
-            return 0;
-        }
-        return summary[1];
+        return summary.size() == 2 ? summary.get(1) : 0;
     }
 
     public int oddsValue() {
-        return summary.length != 2 ? 0 : summary[0];
+        return summary.size() == 2 ? summary.get(0) : 0;
     }
 
     @Override

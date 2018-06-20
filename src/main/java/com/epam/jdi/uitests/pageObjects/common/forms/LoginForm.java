@@ -1,4 +1,4 @@
-package com.epam.jdi.uitests.pageObjects.forms;
+package com.epam.jdi.uitests.pageObjects.common.forms;
 
 import com.epam.jdi.uitests.entities.User;
 import com.epam.jdi.uitests.web.selenium.elements.common.Button;

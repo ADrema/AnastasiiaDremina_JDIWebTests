@@ -1,4 +1,4 @@
-package com.epam.jdi.uitests.pageObjects.sections;
+package com.epam.jdi.uitests.pageObjects.metalsAndColorsPage.sections;
 
 import com.epam.jdi.uitests.core.interfaces.common.IButton;
 import com.epam.jdi.uitests.enumObjects.Even;

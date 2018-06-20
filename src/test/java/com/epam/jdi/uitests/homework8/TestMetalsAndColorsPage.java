@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import static com.epam.jdi.uitests.core.settings.JDISettings.logger;
 import static com.epam.jdi.uitests.entities.User.PETER;
-import static com.epam.jdi.uitests.enumObjects.Pages.METALSANDCOLORS;
+import static com.epam.jdi.uitests.enumObjects.Pages.METALS_AND_COLORS;
 import static com.epam.jdi.uitests.pageObjects.site.JdiSite.homePage;
 import static com.epam.jdi.uitests.pageObjects.site.JdiSite.metalsAndColorsPage;
 
@@ -28,11 +28,11 @@ public class TestMetalsAndColorsPage extends TestBase {
         metalsAndColorsPage.refresh();
     }
 
-    @Test(dataProviderClass = DataProvider.class, dataProvider = "readFromJson")
+    @Test(dataProviderClass = MetalsAndColorsDataProvider.class, dataProvider = "readFromJson")
     public void loginTest(MetalsAndColorsParameters parameters) {
 
 //        2. Open Metals & Colors page by Header menu
-        homePage.headerMenu.selects(METALSANDCOLORS);
+        homePage.headerMenu.selects(METALS_AND_COLORS);
         metalsAndColorsPage.checkOpened();
 
 //        3. Fill form Metals & Colors by data below:
