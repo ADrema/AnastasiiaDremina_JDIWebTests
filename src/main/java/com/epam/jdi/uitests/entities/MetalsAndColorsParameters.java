@@ -31,7 +31,7 @@ public class MetalsAndColorsParameters {
             }}
     );
 
-// TODO it will be better with List<...>
+    // TODO it will be better with List<...>
 //    Done. Lists were created
     public List<Integer> summary;
     public List<String> elements;

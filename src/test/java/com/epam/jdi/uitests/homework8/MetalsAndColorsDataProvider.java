@@ -3,15 +3,15 @@ package com.epam.jdi.uitests.homework8;
 import com.epam.jdi.uitests.entities.MetalsAndColorsParameters;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
-
 import org.testng.annotations.DataProvider;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
 import java.util.Set;
 
 public class MetalsAndColorsDataProvider {
-//      TODO static import
+    //      TODO static import
 //      Done
     @DataProvider(name = "readFromJson")
     public static Object[][] getData() throws FileNotFoundException {

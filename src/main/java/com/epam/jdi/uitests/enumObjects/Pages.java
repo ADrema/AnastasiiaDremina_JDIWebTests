@@ -1,7 +1,6 @@
 package com.epam.jdi.uitests.enumObjects;
 
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 // TODO code convention mismatch
