@@ -7,6 +7,7 @@ import org.testng.annotations.DataProvider;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
@@ -33,7 +34,6 @@ public class MetalsAndColorsDataProvider {
         int index = 0;
         for (Object[] each : returnValue) {
             each[0] = testData.get(index++);
-            System.out.println(each[0].toString());
         }
         return returnValue;
     }
