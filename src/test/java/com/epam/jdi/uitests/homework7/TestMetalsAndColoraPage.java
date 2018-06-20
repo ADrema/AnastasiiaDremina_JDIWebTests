@@ -9,7 +9,7 @@ import static com.epam.jdi.uitests.entities.MetalsAndColorsParameters.TEST1;
 import static com.epam.jdi.uitests.entities.User.PETER;
 import static com.epam.jdi.uitests.enumObjects.Pages.METALSANDCOLORS;
 import static com.epam.jdi.uitests.pageObjects.site.JdiSite.homePage;
-import static com.epam.jdi.uitests.pageObjects.site.JdiSite.mAcPage;
+import static com.epam.jdi.uitests.pageObjects.site.JdiSite.metalsAndColorsPage;
 
 public class TestMetalsAndColoraPage extends TestBase {
 
@@ -26,12 +26,12 @@ public class TestMetalsAndColoraPage extends TestBase {
         homePage.login(PETER);
 //        2. Open Metals & Colors page by Header menu
         homePage.headerMenu.selects(METALSANDCOLORS);
-        mAcPage.checkOpened();
+        metalsAndColorsPage.checkOpened();
 //        3. Fill form Metals & Colors by data below:
-        mAcPage.fillForm(TEST1);
+        metalsAndColorsPage.fillForm(TEST1);
 //        4. Submit form Metals & Colors
-        mAcPage.submitButton.click();
+        metalsAndColorsPage.submitButton.click();
 //        5. Result sections should contains data  below:
-        mAcPage.checkResultParameters(TEST1);
+        metalsAndColorsPage.checkResultParameters(TEST1);
     }
 }

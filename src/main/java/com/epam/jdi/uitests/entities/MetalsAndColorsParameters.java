@@ -26,11 +26,14 @@ public class MetalsAndColorsParameters {
             new String[]{Vegetables.VEGETABLES.value}
     );
 
+    // TODO it will be better with List<...>
     public Integer[] summary;
     public String[] elements;
     public String color;
     public String metals;
     public String[] vegetables;
+
+    // TODO this should not be here, couse you're described an entity regardless the element behaviour
     public String[] unselectVegetables = new String[]{Vegetables.VEGETABLES.value};
 
 
@@ -42,10 +45,7 @@ public class MetalsAndColorsParameters {
     }
 
     public int oddsValue() {
-        if (summary.length != 2) {
-            return 0;
-        }
-        return summary[0];
+        return summary.length != 2 ? 0 : summary[0];
     }
 
     @Override
