@@ -55,4 +55,28 @@ public class MetalsAndColorsParameters {
                 ", vegetables=" + String.join(", ", vegetables) +
                 '}';
     }
+
+    public boolean hasEvenValue() {
+        return evenValue() > 0;
+    }
+
+    public boolean hasOddsValue() {
+        return oddsValue() > 0;
+    }
+
+    public boolean hasColorValue() {
+        return color.length() > 0;
+    }
+
+    public boolean hasMetalsValue() {
+        return metals.length() > 0;
+    }
+
+    public boolean hasVegetablesValue() {
+        return vegetables.size() > 0;
+    }
+
+    public boolean hasElementsValue() {
+        return elements.size() > 0;
+    }
 }

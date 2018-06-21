@@ -10,13 +10,4 @@ public enum Odds {
     SEVEN(7);
 
     public int value;
-
-    public static Odds valueOf(int val) {
-        for (Odds o : values()) {
-            if (o.value == val) {
-                return o;
-            }
-        }
-        return null;
-    }
 }

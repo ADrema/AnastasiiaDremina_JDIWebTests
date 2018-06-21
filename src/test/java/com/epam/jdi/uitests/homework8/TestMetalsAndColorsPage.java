@@ -30,7 +30,6 @@ public class TestMetalsAndColorsPage extends TestBase {
 
     @Test(dataProviderClass = MetalsAndColorsDataProvider.class, dataProvider = "readFromJson")
     public void loginTest(MetalsAndColorsParameters parameters) {
-
 //        2. Open Metals & Colors page by Header menu
         homePage.headerMenu.selects(METALS_AND_COLORS);
         metalsAndColorsPage.checkOpened();

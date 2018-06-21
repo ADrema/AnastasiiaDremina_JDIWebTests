@@ -10,13 +10,4 @@ public enum Even {
     EIGHT(8);
 
     public int value;
-
-    public static Even valueOf(int val) {
-        for (Even o : values()) {
-            if (o.value == val) {
-                return o;
-            }
-        }
-        return null;
-    }
 }

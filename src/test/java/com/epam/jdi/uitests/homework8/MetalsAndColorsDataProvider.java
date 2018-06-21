@@ -19,7 +19,6 @@ public class MetalsAndColorsDataProvider {
         JsonObject dataSet = jsonData.getAsJsonObject();
 
         // TODO you can just use a different type token in according to data structure...
-
         // TODO Map<Str, Data>
         // Done
         HashMap<String, MetalsAndColorsParameters> testData = new Gson().fromJson(dataSet, new TypeToken<HashMap<String, MetalsAndColorsParameters>>() {

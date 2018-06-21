@@ -43,24 +43,24 @@ public class ResultSection extends Section {
     private void checkSummaryResult(MetalsAndColorsParameters parameters, List<String> resultContent) {
         int even = 2;
         int odd = 1;
-        if (parameters.evenValue() > 0) {
+        if (parameters.hasEvenValue()) {
             even = parameters.evenValue();
         }
-        if (parameters.oddsValue() > 0) {
+        if (parameters.hasOddsValue()) {
             odd = parameters.oddsValue();
         }
         assertThat(resultContent, hasItem("Summary: " + (even + odd)));
     }
 
     private void checkElementsResult(MetalsAndColorsParameters parameters, List<String> resultContent) {
-        if (parameters.metals.length() > 0) {
+        if (parameters.hasElementsValue()) {
             assertThat(resultContent, hasItem("Elements: " + String.join(", ", parameters.elements)));
         }
     }
 
     private void checkColorsResult(MetalsAndColorsParameters parameters, List<String> resultContent) {
         String color = "Colors";
-        if (parameters.color.length() > 0) {
+        if (parameters.hasColorValue()) {
             color = parameters.color;
         }
         assertThat(resultContent, hasItem("Color: " + color));
@@ -68,7 +68,7 @@ public class ResultSection extends Section {
 
     private void checkMetalsResult(MetalsAndColorsParameters parameters, List<String> resultContent) {
         String metal = "Metals";
-        if (parameters.metals.length() > 0) {
+        if (parameters.hasMetalsValue()) {
             metal = parameters.metals;
         }
         assertThat(resultContent, hasItem("Metal: " + metal));
@@ -76,7 +76,7 @@ public class ResultSection extends Section {
 
     private void checkVegetablesResult(MetalsAndColorsParameters parameters, List<String> resultContent) {
         String vegetables = "Vegetables";
-        if (parameters.vegetables.size() > 0) {
+        if (parameters.hasVegetablesValue()) {
             vegetables = String.join(", ", parameters.vegetables);
         }
         assertThat(resultContent, hasItem("Vegetables: " + vegetables));
