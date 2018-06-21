@@ -31,16 +31,11 @@ public class MetalsAndColorsParameters {
             }}
     );
 
-    // TODO it will be better with List<...>
-//    Done. Lists were created
     public List<Integer> summary;
     public List<String> elements;
     public String color;
     public String metals;
     public List<String> vegetables;
-
-// TODO this should not be here, couse you're described an entity regardless the element behaviour
-//  Done. Property "unselectVegetables"  was removed
 
     public int evenValue() {
         return summary.size() == 2 ? summary.get(1) : 0;

@@ -3,8 +3,6 @@ package com.epam.jdi.uitests.enumObjects;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-// TODO code convention mismatch
-// Done. Underscore was added
 public enum Pages {
     HOME("Home"),
     SERVICE("Service"),

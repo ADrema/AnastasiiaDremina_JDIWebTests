@@ -13,14 +13,14 @@ import java.io.FileReader;
 import java.util.HashMap;
 
 public class MetalsAndColorsDataProvider {
-    //  TODO static import
-    //  Done
     @DataProvider(name = "readFromJson")
     public static Object[][] getData() throws FileNotFoundException {
         JsonElement jsonData = new JsonParser().parse(new FileReader("src/test/resources/sourceData/JDI_ex8_metalsColorsDataSet.json"));
         JsonObject dataSet = jsonData.getAsJsonObject();
 
         // TODO you can just use a different type token in according to data structure...
+
+        // TODO Map<Str, Data>
         // Done
         HashMap<String, MetalsAndColorsParameters> testData = new Gson().fromJson(dataSet, new TypeToken<HashMap<String, MetalsAndColorsParameters>>() {
         }.getType());
