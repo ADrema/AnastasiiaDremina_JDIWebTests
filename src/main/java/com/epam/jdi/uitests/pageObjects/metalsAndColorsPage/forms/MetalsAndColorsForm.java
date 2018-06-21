@@ -57,7 +57,13 @@ public class MetalsAndColorsForm extends Form {
             };
 
     public void fill(MetalsAndColorsParameters parameters) {
+        // TODO it is not make scene to check all fields here, actually.
+        // TODO if you want to do that, it will be better to check it in
+        // TODO data preparation phase or somewhere else, but ONCE
         if (parameters.evenValue() > 0) {
+            // TODO do you have a chance to read IDEA warning ? You might have NPE here...
+            // TODO if you're really enjoin of enums for Integers, encapsulate it in MetalsAndColorsParameters.class
+            // TODO but from my point, it's useless...
             summaryBlock.even.select(Even.valueOf(parameters.evenValue()));
         }
         if (parameters.oddsValue() > 0) {
@@ -67,7 +73,9 @@ public class MetalsAndColorsForm extends Form {
             colorsDropDownList.select(parameters.color);
         }
         if (parameters.vegetables.size() > 0) {
-// workaround for site feature. Vegetables option is selected by default
+            // workaround for site feature. Vegetables option is selected by default
+            // TODO you have to use "unselect" method for this purpose.
+            // TODO Method "select" should not click on item in case if it selected already
             vegetablesList.select(Vegetables.VEGETABLES.value);
             vegetablesList.select(parameters.vegetables);
         }
@@ -75,7 +83,7 @@ public class MetalsAndColorsForm extends Form {
             metalsComboBox.select(parameters.metals);
         }
         if (parameters.elements.size() > 0) {
-            nature.select(parameters.elements.toArray(new String[parameters.elements.size()]));
+            nature.select((String[]) parameters.elements.toArray());
         }
     }
 }
