@@ -58,15 +58,9 @@ public class MetalsAndColorsForm extends Form {
             };
 
     public void fill(MetalsAndColorsParameters parameters) {
-        // TODO it does not make scene to check all fields here, actually.
-        // TODO if you want to do that, it will be better to check it in
-        // TODO data preparation phase or somewhere else, but ONCE
-        // Done?
+        // TODO I told you that you should not check every field of MetalsAndColorsParameters here !
+        // TODO If you want to reject the last dataset, check it on the data preparation phase !
         if (parameters.hasEvenValue()) {
-            // TODO do you have a chance to read IDEA warning ? You might have NPE here...
-            // TODO if you're really enjoin of enums for Integers, encapsulate it in MetalsAndColorsParameters.class
-            // TODO but from my point, it's useless...
-            // Done
             summaryBlock.even.select(String.valueOf(parameters.evenValue()));
         }
         if (parameters.hasOddsValue()) {
@@ -75,17 +69,10 @@ public class MetalsAndColorsForm extends Form {
         if (parameters.hasColorValue()) {
             colorsDropDownList.select(parameters.color);
         }
-        // workaround for site feature. Vegetables option is selected by default
-        // TODO you have to use "unselect" method for this purpose.
-//            Done.
-        // TODO Method "select" should not click on item in case if it selected already
-//            Done
         vegetablesList.select(parameters.vegetables);
         if (parameters.hasMetalsValue()) {
             metalsComboBox.select(parameters.metals);
         }
-        nature.select(parameters.elements.toArray(new String[parameters.elements.size()]));
-//            java.lang.ClassCastException: [Ljava.lang.Object; cannot be cast to [Ljava.lang.String;
-//            nature.select((String[]) parameters.elements.toArray());
+        nature.select(parameters.elements.toArray(new String[0]));
     }
 }
