@@ -18,18 +18,17 @@ public class MetalsAndColorsDataProvider {
         JsonElement jsonData = new JsonParser().parse(new FileReader("src/test/resources/sourceData/JDI_ex8_metalsColorsDataSet.json"));
         JsonObject dataSet = jsonData.getAsJsonObject();
 
-        // TODO you can just use a different type token in according to data structure...
-        // TODO Map<Str, Data>
-        // Done
         HashMap<String, MetalsAndColorsParameters> testData = new Gson().fromJson(dataSet, new TypeToken<HashMap<String, MetalsAndColorsParameters>>() {
         }.getType());
 
+        // TODO what is this ? Take a look on HashMap::values method...
         Object[][] returnValue = new Object[testData.size()][1];
 
         int index = 0;
         for (Object[] each : returnValue) {
             each[0] = testData.get("data_" + (++index));
         }
+        // !TODO
         return returnValue;
     }
 }
