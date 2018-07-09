@@ -60,19 +60,12 @@ public class MetalsAndColorsForm extends Form {
     public void fill(MetalsAndColorsParameters parameters) {
         // TODO I told you that you should not check every field of MetalsAndColorsParameters here !
         // TODO If you want to reject the last dataset, check it on the data preparation phase !
-        if (parameters.hasEvenValue()) {
-            summaryBlock.even.select(String.valueOf(parameters.evenValue()));
-        }
-        if (parameters.hasOddsValue()) {
-            summaryBlock.odds.select(String.valueOf(parameters.oddsValue()));
-        }
-        if (parameters.hasColorValue()) {
-            colorsDropDownList.select(parameters.color);
-        }
+//        Last data set was removed
+        summaryBlock.even.select(String.valueOf(parameters.evenValue()));
+        summaryBlock.odds.select(String.valueOf(parameters.oddsValue()));
+        colorsDropDownList.select(parameters.color);
         vegetablesList.select(parameters.vegetables);
-        if (parameters.hasMetalsValue()) {
-            metalsComboBox.select(parameters.metals);
-        }
+        metalsComboBox.select(parameters.metals);
         nature.select(parameters.elements.toArray(new String[0]));
     }
 }
